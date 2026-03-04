@@ -1,9 +1,13 @@
+# Curriculum Vitae
+
+This repository contains the source files for my CV, built using Quarto.
+
+## Acknowledgement
+
+This CV is based on the Quarto Resume Demo template by [@enarroied](https://github.com/enarroied). Found here: [original template](https://github.com/enarroied/quarto_resume_sample).
+
 [![Built with Quarto](https://img.shields.io/badge/Built_with-Quarto-2196F3?style=flat&logo=quarto)](https://quarto.org)
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python)](https://python.org)
-
-# Quarto Resume Demo
-
-This is a mockup résumé, using Quarto and some other awesome libraries. The resume shows the experience of Marcus Tabulae Pivotus, a Roman analyst and philosopher. Feel free to adapt, reuse and modify!
 
 ## Workflow
 

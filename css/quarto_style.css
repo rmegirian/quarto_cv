@@ -42,7 +42,7 @@ img, .quarto-figure img {
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
     font-family: 'Inter', sans-serif;
     font-size: 2rem;
     font-weight: 700;

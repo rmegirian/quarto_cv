@@ -18,25 +18,23 @@ from resume_functions.resume_functions import create_star_rating
 ::: {.columns}
 
 ::: {.column .side-column width="35%"}
-# Marcus Tabulae Pivotus
+# Rose Megirian
 
-![](./data/logo.png)
 
-## Roman Analyst and Philosopher
 
-🏠 Rome, Roman Empire  
-☎️ +I IV XII VIII II  
-📧 marcustabulaepivotus@romanmail.com  
-<i class="fa-brands fa-linkedin-in"></i> [LinkedIn]()    
-<i class="fa-brands fa-github"></i> [GitHub]()  
-🌐 [marcustabulaepivotus.com]()  
+## Behavioural Systems and Impact Strategist
+ 
+📧 rose.megirian@gmail.com  
+<i class="fa-brands fa-linkedin-in"></i> [LinkedIn](https://www.linkedin.com/in/rosemegirian/?originalSubdomain=au)    
+<i class="fa-brands fa-github"></i> [GitHub](https://github.com/rmegirian)  
+🌐 [rosemegirian.com](https://rosemegirian.com/)  
 
 ## About Me
-Roman philosopher whose passion lies in the elegant dance of data and the divine art of the pivot table. I bring order, clarity, and a touch of sardonic wit to the chaotic world of information. If you seek a mind that can both contemplate the cosmos and meticulously sort your chariot race results, look no further. I am the emperor of efficiency and the oracle of organization.
+Systems and behavioural specialist with expertise in diverse research methodologies, analysis, and design thinking, translating complex evidence into strategy, interventions, and communications that achieve meaningful, enduring outcomes. Experienced across public, private, and not-for-profit sectors, I identify leverage points, guide strategic decisions, and align initiatives with organisational goals to maximise impact within complex social and operational systems.
 
 ```{python}
 #| echo: false
-df_skills = pd.read_csv("./data/skills.csv")
+df_skills = pd.read_csv("./data/strategy_skills.csv")
 df_skills["stars"] = df_skills["mark"].apply(create_star_rating)
 
 GT(

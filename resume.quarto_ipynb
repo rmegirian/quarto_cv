@@ -1,0 +1,154 @@
+{
+  "cells": [
+    {
+      "cell_type": "raw",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "toc: false\n",
+        "format:\n",
+        "  html:\n",
+        "    css: css/quarto_style.css\n",
+        "    include-in-header:\n",
+        "      text:\n",
+        "        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\">\n",
+        "---"
+      ],
+      "id": "87d0b7be"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "\n",
+        "import pandas as pd\n",
+        "from great_tables import GT\n",
+        "from resume_functions.resume_functions import create_star_rating"
+      ],
+      "id": "d923e4d4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.columns}\n",
+        "\n",
+        "::: {.column .side-column width=\"35%\"}\n",
+        "# Rose Megirian\n",
+        "\n",
+        "\n",
+        "\n",
+        "## Behavioural Systems and Impact Strategist\n",
+        " \n",
+        "📧 rose.megirian@gmail.com  \n",
+        "<i class=\"fa-brands fa-linkedin-in\"></i> [LinkedIn](https://www.linkedin.com/in/rosemegirian/?originalSubdomain=au)    \n",
+        "<i class=\"fa-brands fa-github\"></i> [GitHub](https://github.com/rmegirian)  \n",
+        "🌐 [rosemegirian.com](https://rosemegirian.com/)  \n",
+        "\n",
+        "## About Me\n",
+        "Systems and behavioural specialist with expertise in diverse research methodologies, analysis, and design thinking, translating complex evidence into strategy, interventions, and communications that achieve meaningful, enduring outcomes. Experienced across public, private, and not-for-profit sectors, I identify leverage points, guide strategic decisions, and align initiatives with organisational goals to maximise impact within complex social and operational systems."
+      ],
+      "id": "0f614f1a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "df_skills = pd.read_csv(\"./data/strategy_skills.csv\")\n",
+        "df_skills[\"stars\"] = df_skills[\"mark\"].apply(create_star_rating)\n",
+        "\n",
+        "GT(\n",
+        "    df_skills[[\"skill_type\", \"skill\", \"description\", \"stars\"]],\n",
+        "    rowname_col=\"skill\",\n",
+        "    groupname_col=\"skill_type\",\n",
+        ").tab_header(\"Skills\").cols_label(skill=\"\", description=\"\", stars=\"\").cols_width(\n",
+        "    cases={\"skill\": \"10%\", \"description\": \"50%\", \"stars\": \"20%\"}\n",
+        ")"
+      ],
+      "id": "5db9693c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "\n",
+        "df_languages = pd.read_csv(\"./data/languages.csv\")\n",
+        "df_languages[\"stars\"] = df_languages[\"mark\"].apply(create_star_rating)\n",
+        "\n",
+        "GT(df_languages[[\"Language\", \"Level\", \"stars\"]]).tab_header(\"Languages\").cols_label(\n",
+        "    Language=\"\", Level=\"\", stars=\"\"\n",
+        ").cols_width(\n",
+        "    cases={\"Language\": \"20%\", \"Level\": \"20%\", \"stars\": \"10%\"}\n",
+        ")"
+      ],
+      "id": "1e9985a9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        ":::\n",
+        "::: {.column .main-section width=\"65%\"}\n",
+        "\n",
+        "## 💡 Projects and Publications\n",
+        "\n",
+        "**The Categorization of Coliseums: A Comprehensive Database of Gladiatorial Engagements | 30 BCE - Present | Lead Scriptor & Data Augur**  \n",
+        "Developed and maintained a comprehensive scroll-based database of gladiatorial contests across the Roman Empire, meticulously detailing combatants, outcomes, beast encounters, and crowd sentiment (as interpreted from audible cheers and jeers).\n",
+        "Pioneered a system of \"scroll-slicing\" and \"wax-tablet pivoting\" to generate daily, weekly, and annual summaries of arena performance, identifying emerging trends in combat styles and popular beast pairings.\n",
+        "\n",
+        "\n",
+        "**45 BCE - 25 BCE | Decoding the Oracles of Delphi: Prophetic Quantitative Analysis**  \n",
+        "Abacus-Based Regressions, Pattern Seeking, Metaphysical Statistics. Transcribed and analyzed over 1,000 Delphic pronouncements, classifying them by theme and predictive accuracy.\n",
+        "\n",
+        "## 🛠️ Experience\n",
+        "\n",
+        "**20 CE - Present | Senior Data Archivist | Imperial Scriptorium, Rome**  \n",
+        "Spearheaded the standardization of historical records, converting diverse scroll formats into coherent, searchable datasets. Implemented papyrus-based indexing systems to streamline access to imperial decrees and census figures. Optimized the flow of critical information from distant provinces to the capital, ensuring timely strategic decisions.\n",
+        "\n",
+        "**5 BCE - 15 CE | Aquaeductus Efficiency Expert | Roman Public Works Department**  \n",
+        "Analyzed water flow dynamics across major aqueduct systems, identifying bottlenecks and optimizing resource distribution. Developed stone tablet schematics for improved maintenance schedules, reducing repair times by 30%. Consulted on new construction projects, ensuring optimal hydrological planning for urban water supply.\n",
+        "\n",
+        "## 🎓 Education\n",
+        "\n",
+        "**15 CE | Certified Imperial Data Harmonizer (CIDH) | Roman Guild of Scribes and Numerologists**  \n",
+        "License number LXXVII. \n",
+        "\n",
+        "**25 BCE | Lyceum of Athens (via Correspondence Scrolls) | Doctorate in Metaphysical Data Structures**  \n",
+        "Rigorously debated the philosophical implications of logical fallacies and their impact on data integrity.\n",
+        "Thesis: \"The Optimal Categorization of the Cosmos: A Hierarchical Approach to Universal Understanding.\"\n",
+        "\n",
+        "**35 BCE | Imperial School of Rhetoric & Numerology, Rome | Master of Abacus Arts & Persuasive Logic**  \n",
+        "Mastered the art of rapid calculation and complex numerical analysis using the abacus and counting boards.\n",
+        "Specialized in constructing logically impeccable arguments for the efficient organization of public records and imperial decrees.\n",
+        "\n",
+        "\n",
+        "**40 BCE | Private Tutelage under Senator Quintus Discipulus | Foundation in Stoic Data Management**  \n",
+        "Grounded in the stoic principles of order, self-discipline, and the systematic reduction of chaotic information.\n",
+        "Developed foundational skills in papyrus inscription, scroll indexing, and the early application of data organization to private finances.\n",
+        "\n",
+        ":::\n",
+        ":::"
+      ],
+      "id": "ed3e3dbf"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/rosemegirian/Documents/Coding/git_repositories/quarto_resume_sample-master/.venv/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
